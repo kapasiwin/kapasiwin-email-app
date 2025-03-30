@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compose Email</title>
+</head>
+<body>
+  <h1>Compose Email</h1>
+
+  {% if templates and templates|length > 0 %}
+    <form method="POST">
+      <label>Select Template:</label>
+      <select name="template" required>
+        {% for temp in templates %}
+          <option value="{{ temp[0] }}">{{ temp[1] }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Send Email</button>
+    </form>
+  {% else %}
+    <p style="color: red;">⚠️ No templates found. <a href="/templates">Create one here</a>.</p>
+  {% endif %}
+
+  <p>
+    <a href="/templates">Manage Templates</a> |
+    <a href="/subscribers">Manage Subscribers</a>
+  </p>
+</body>
+</html>
+
+
+

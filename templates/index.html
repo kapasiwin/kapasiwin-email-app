@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-center">
+  <h2>Welcome to the Email Manager</h2>
+  <p class="lead">Manage your subscribers, create email templates, and send campaigns—all from one place.</p>
+
+  <div class="d-grid gap-3 col-6 mx-auto mt-4">
+    <a href="/compose" class="btn btn-primary btn-lg">📤 Compose Email</a>
+    <a href="/templates" class="btn btn-success btn-lg">📝 Manage Templates</a>
+    <a href="/subscribers" class="btn btn-secondary btn-lg">👥 Manage Subscribers</a>
+  </div>
+</div>
+{% endblock %}

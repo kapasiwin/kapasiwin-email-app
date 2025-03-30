@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Subscribers</h2>
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-8">
+    <input type="email" name="email" placeholder="Enter email" class="form-control" required>
+  </div>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-secondary w-100">Add Subscriber</button>
+  </div>
+</form>
+
+{% if subscribers %}
+  <ul class="list-group">
+    {% for sub in subscribers %}
+      <li class="list-group-item">{{ sub[1] }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="text-muted">No subscribers added yet.</p>
+{% endif %}
+{% endblock %}
+
+
+
