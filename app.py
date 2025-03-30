@@ -131,5 +131,9 @@ def send_email(to_email, subject, body, sender_key):
         server.login(from_email, password)
         server.sendmail(from_email, to_email, msg.as_string())
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
